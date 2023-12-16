@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmk1vedg8hnvg"]
+[gd_scene load_steps=4 format=3 uid="uid://c0cfoff6h1yq2"]
 
 [ext_resource type="Script" path="res://Obstacle.gd" id="1_n0yyd"]
 [ext_resource type="Texture2D" uid="uid://d0o7t1mq37q1k" path="res://snow.png" id="2_lxau8"]
