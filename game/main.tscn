@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://4ka0h6wft30v" path="res://fence.tscn" id="7_06gds"]
 [ext_resource type="PackedScene" path="res://tree.tscn" id="9_snl6l"]
 [ext_resource type="PackedScene" uid="uid://ya537dogkk20" path="res://end_game_screen.tscn" id="10_01gf3"]
-[ext_resource type="MeshLibrary" uid="uid://bsymydnpdyudy" path="res://SnoballMeshLib.tres" id="11_45vcm"]
+[ext_resource type="MeshLibrary" uid="uid://drdnwww7ibvx" path="res://SnoballMeshLib.tres" id="11_45vcm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_46qb7"]
 radius = 1.0
@@ -80,6 +80,15 @@ transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -2.99998
 [node name="Tree3" parent="GameWorld/treeCluster" instance=ExtResource("9_snl6l")]
 transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -5.99998, 1.8, -6.4373e-06)
 
+[node name="Tree4" parent="GameWorld/treeCluster" instance=ExtResource("9_snl6l")]
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, 0, 0, 0)
+
+[node name="Tree5" parent="GameWorld/treeCluster" instance=ExtResource("9_snl6l")]
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -2.99999, 0, -2)
+
+[node name="Tree6" parent="GameWorld/treeCluster" instance=ExtResource("9_snl6l")]
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -5.99999, 0, -5.96046e-06)
+
 [node name="treeCluster2" type="Node3D" parent="GameWorld"]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 14.7341, -3.4, 2.44012)
 
@@ -91,6 +100,12 @@ transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -2.99999
 
 [node name="Tree3" parent="GameWorld/treeCluster2" instance=ExtResource("9_snl6l")]
 transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -5.99999, 1.8, -5.24521e-06)
+
+[node name="Tree4" parent="GameWorld/treeCluster2" instance=ExtResource("9_snl6l")]
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, 0, 0, 0)
+
+[node name="Tree5" parent="GameWorld/treeCluster2" instance=ExtResource("9_snl6l")]
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -5.99999, 0, -5.96046e-06)
 
 [node name="House" parent="GameWorld" instance=ExtResource("6_637or")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, -1.89457, 14.9694)
@@ -157,31 +172,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3, 0.2, -1.5)
 [node name="Fence7" parent="GameWorld/fenceSquare/Fence Row3" instance=ExtResource("7_06gds")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3, 0.2, -1.49999)
 
-[node name="treeCluster" type="Node3D" parent="GameWorld"]
+[node name="treeCluster3" type="Node3D" parent="GameWorld"]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -22, -1.7, 2.4)
-
-[node name="Tree" parent="GameWorld/treeCluster" instance=ExtResource("9_snl6l")]
-transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, 0, 0, 0)
-
-[node name="Tree2" parent="GameWorld/treeCluster" instance=ExtResource("9_snl6l")]
-transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -2.99999, 0, -2)
-
-[node name="Tree3" parent="GameWorld/treeCluster" instance=ExtResource("9_snl6l")]
-transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -5.99999, 0, -5.96046e-06)
-
-[node name="treeCluster2" type="Node3D" parent="GameWorld"]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 14, -1.7, 2.4)
-
-[node name="Tree" parent="GameWorld/treeCluster2" instance=ExtResource("9_snl6l")]
-transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, 0, 0, 0)
 
 [node name="Tree2" parent="GameWorld/treeCluster3" instance=ExtResource("9_snl6l")]
 transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -2.99998, 1.8, -2)
 
-[node name="Tree3" parent="GameWorld/treeCluster2" instance=ExtResource("9_snl6l")]
-transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -5.99999, 0, -5.96046e-06)
+[node name="treeCluster4" type="Node3D" parent="GameWorld"]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 14, -1.7, 2.4)
 
-[node name="House" parent="GameWorld" instance=ExtResource("6_637or")]
+[node name="House2" parent="GameWorld" instance=ExtResource("6_637or")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.9, -1.8, 15)
 
 [node name="Tree" parent="GameWorld" instance=ExtResource("9_snl6l")]
