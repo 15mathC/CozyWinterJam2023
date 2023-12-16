@@ -64,10 +64,10 @@ func _physics_process(delta):
 
 				var gridPos = grid.local_to_map  ( pos )
 				print(gridPos)
-				var item = grid.get_cell_item( Vector3(gridPos.x, .001, gridPos.z))
+				var item = grid.get_cell_item( Vector3(gridPos.x, .5, gridPos.z))
 				print(item)
 				if(item == 0):
 					self.grow(0.01)
-					grid.set_cell_item(Vector3(gridPos.x, .001, gridPos.z), 1)
+					grid.set_cell_item(Vector3(gridPos.x, 0.001, gridPos.z), 1)
 			else:
 				coll.player_collision(self)
