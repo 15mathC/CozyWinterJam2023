@@ -20,6 +20,7 @@ func _ready():
 	
 func grow(amount: float):
 	size += amount
+	# print(size)
 	scale += Vector3(amount, amount, amount)
 	position.y = size + _initial_pos.y
 	playerGrow.emit()
@@ -54,8 +55,8 @@ func _physics_process(delta):
 	if collision:
 		for i in range(collision.get_collision_count()):
 			var coll = collision.get_collider(i)
-			print("collided with")
-			print(coll)
+			# print("collided with")
+			# print(coll)
 			if coll is GridMap:
 				var grid = coll
 				var pos =  collision.get_position(i)
@@ -63,9 +64,9 @@ func _physics_process(delta):
 				#pos = self.to_local(pos)
 
 				var gridPos = grid.local_to_map  ( pos )
-				print(gridPos)
+				# print(gridPos)
 				var item = grid.get_cell_item( Vector3(gridPos.x, .5, gridPos.z))
-				print(item)
+				# print(item)
 				if(item == 0):
 					self.grow(0.01)
 					grid.set_cell_item(Vector3(gridPos.x, 0.001, gridPos.z), 1)

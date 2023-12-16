@@ -1,11 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://b6r2fby64qxsp"]
+[gd_scene load_steps=15 format=3 uid="uid://b6r2fby64qxsp"]
 
 [ext_resource type="Script" path="res://PlayerSnowball.gd" id="1_bh06k"]
 [ext_resource type="Script" path="res://main.gd" id="1_n4nh7"]
 [ext_resource type="Texture2D" uid="uid://d0o7t1mq37q1k" path="res://snow.png" id="2_rfh8k"]
 [ext_resource type="Texture2D" uid="uid://dyn8iumrkjbbh" path="res://testTree.png" id="3_2bpv4"]
 [ext_resource type="Script" path="res://Obstacle.gd" id="3_chjlc"]
-[ext_resource type="Texture2D" uid="uid://dk86fa2hvpf7p" path="res://mom.png" id="5_52m4f"]
 [ext_resource type="PackedScene" uid="uid://4ka0h6wft30v" path="res://fence.tscn" id="7_06gds"]
 [ext_resource type="PackedScene" path="res://end_game_screen.tscn" id="10_01gf3"]
 [ext_resource type="MeshLibrary" uid="uid://bsymydnpdyudy" path="res://SnoballMeshLib.tres" id="11_45vcm"]
@@ -22,12 +21,10 @@ material = SubResource("StandardMaterial3D_esa0y")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjkom"]
 albedo_texture = ExtResource("2_rfh8k")
+texture_filter = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mt07d"]
 size = Vector3(2, 6, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_byxke"]
-size = Vector3(1.48527, 0.902886, 0.001)
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_n4nh7")
@@ -107,19 +104,6 @@ texture = ExtResource("3_2bpv4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_mt07d")
 
-[node name="Obstacle2" type="StaticBody3D" parent="GameWorld"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -1)
-script = ExtResource("3_chjlc")
-
-[node name="Sprite3D" type="Sprite3D" parent="GameWorld/Obstacle2"]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
-flip_h = true
-render_priority = 1
-texture = ExtResource("5_52m4f")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld/Obstacle2"]
-shape = SubResource("BoxShape3D_byxke")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="GameWorld"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 8, 0)
 
@@ -127,6 +111,7 @@ transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 8, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Fence" parent="GameWorld/Fences" instance=ExtResource("7_06gds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.2, -3)
 
 [node name="EndGameScreen" parent="." instance=ExtResource("10_01gf3")]
 visible = false

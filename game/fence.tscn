@@ -4,18 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://dqmc84tnifko6" path="res://ourFence.png" id="2_rx87u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_byxke"]
-size = Vector3(1.48527, 0.902886, 0.001)
+size = Vector3(3, 1.61312, 0.001)
 
 [node name="Fence" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.2, -3)
 script = ExtResource("1_m3nb7")
-size = 0.1
-growth_amount = 0.05
+size = 0.5
+growth_amount = 0.1
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 flip_h = true
-pixel_size = 0.05
+pixel_size = 0.1
 texture_filter = 0
 render_priority = 1
 texture = ExtResource("2_rx87u")
