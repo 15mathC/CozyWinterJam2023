@@ -8,7 +8,7 @@ class_name PlayerSnowball
 var size = 0
 var _old_pos = Vector3(0,0,0)
 var _initial_pos = Vector3(0,0,0)
-
+var _old_motion
 signal playerGrow
 
 
@@ -60,7 +60,13 @@ func _physics_process(delta):
 		self.grow(0.01)
 		grid.set_cell_item(Vector3(gridPos.x, .5, gridPos.z), 1)
 		
-	translate(motion * delta)
+	if(item > 1):
+		translate(_old_motion * delta)
+	else:
+		translate(motion * delta)
+		_old_motion = motion
+
+	
 	var collision = move_and_collide(Vector3(0, 0, 0), true, 0.001, false, 25)
 	if collision:
 		for i in range(collision.get_collision_count()):
