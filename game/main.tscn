@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dyn8iumrkjbbh" path="res://testTree.png" id="3_2bpv4"]
 [ext_resource type="Script" path="res://Obstacle.gd" id="3_chjlc"]
 [ext_resource type="PackedScene" uid="uid://4ka0h6wft30v" path="res://fence.tscn" id="7_06gds"]
-[ext_resource type="PackedScene" path="res://end_game_screen.tscn" id="10_01gf3"]
+[ext_resource type="PackedScene" uid="uid://ya537dogkk20" path="res://end_game_screen.tscn" id="10_01gf3"]
 [ext_resource type="MeshLibrary" uid="uid://bsymydnpdyudy" path="res://SnoballMeshLib.tres" id="11_45vcm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_46qb7"]

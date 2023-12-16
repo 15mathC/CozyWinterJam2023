@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dxd4t87n5huc"]
+[gd_scene load_steps=10 format=3 uid="uid://dxd4t87n5huc"]
 
 [ext_resource type="Texture2D" uid="uid://cplwkrevnllbx" path="res://ground.png" id="1_soj1v"]
 [ext_resource type="Texture2D" uid="uid://d0o7t1mq37q1k" path="res://snow.png" id="1_t4el7"]
@@ -15,9 +15,6 @@ albedo_texture = ExtResource("1_t4el7")
 material = SubResource("StandardMaterial3D_rlh4x")
 size = Vector3(1, 0.001, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_e34sy"]
-size = Vector3(0.996216, 1, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ghuog"]
 albedo_texture = ExtResource("1_soj1v")
 texture_filter = 0
@@ -29,9 +26,6 @@ albedo_texture = ExtResource("1_soj1v")
 material = SubResource("StandardMaterial3D_q684t")
 size = Vector3(1, 0.001, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ug3c0"]
-size = Vector3(1, 1, 0.996094)
-
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -42,17 +36,9 @@ mesh = SubResource("BoxMesh_cy41f")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 script = ExtResource("2_vb4ae")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-transform = Transform3D(1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, 0.00381917, 0, 0.00989219)
-shape = SubResource("BoxShape3D_e34sy")
-
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.871325, -2.14494e-08, -0.490706, 2.14494e-08, 1, -5.62456e-09, 0.490706, -5.62456e-09, 0.871325, 0, 0, -0.0396572)
 material_override = SubResource("StandardMaterial3D_ghuog")
 mesh = SubResource("BoxMesh_jjrg4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
-transform = Transform3D(1, -5.57332e-14, -1.19209e-07, -1.08802e-14, 1, -8.61533e-14, 1.19209e-07, -8.12683e-14, 1, 0, -1.73472e-18, 0.00195313)
-shape = SubResource("BoxShape3D_ug3c0")
