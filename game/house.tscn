@@ -9,8 +9,8 @@ size = Vector3(10, 4.67991, 10)
 [node name="House" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.2, -3)
 script = ExtResource("1_n0yyd")
-size = 2.0
-growth_amount = 0.5
+size = 10.0
+growth_amount = 3.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1.55, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 4, 5)
