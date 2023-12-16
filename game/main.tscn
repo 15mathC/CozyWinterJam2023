@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Obstacle.gd" id="3_chjlc"]
 [ext_resource type="Texture2D" uid="uid://dk86fa2hvpf7p" path="res://mom.png" id="5_52m4f"]
 [ext_resource type="Texture2D" uid="uid://gkbwnon2ps1t" path="res://fence.png" id="7_o20kf"]
-[ext_resource type="PackedScene" uid="uid://ya537dogkk20" path="res://end_game_screen.tscn" id="10_01gf3"]
+[ext_resource type="PackedScene" path="res://end_game_screen.tscn" id="10_01gf3"]
 [ext_resource type="MeshLibrary" uid="uid://bsymydnpdyudy" path="res://SnoballMeshLib.tres" id="11_45vcm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_46qb7"]
@@ -35,7 +35,7 @@ script = ExtResource("1_n4nh7")
 [node name="GameWorld" type="Node3D" parent="."]
 
 [node name="PlayerSnowball" type="AnimatableBody3D" parent="GameWorld"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.4, 0)
 sync_to_physics = false
 script = ExtResource("1_bh06k")
 
