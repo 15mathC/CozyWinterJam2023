@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmk1vedg8hnvg"]
+
+[ext_resource type="Script" path="res://Obstacle.gd" id="1_n0yyd"]
+[ext_resource type="Texture2D" uid="uid://d0o7t1mq37q1k" path="res://snow.png" id="2_lxau8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_byxke"]
+size = Vector3(10, 4.67991, 10)
+
+[node name="House" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.2, -3)
+script = ExtResource("1_n0yyd")
+size = 2.0
+growth_amount = 0.5
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.55, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 4, 5)
+flip_h = true
+pixel_size = 0.1
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("2_lxau8")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1.55, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 4, -5)
+flip_h = true
+pixel_size = 0.1
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("2_lxau8")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(-6.77527e-08, 0, 1, 0, 0.75, 0, -1.55, 0, -4.37114e-08, 5, 4, 0)
+flip_h = true
+pixel_size = 0.1
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("2_lxau8")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(-6.77527e-08, 0, 1, 0, 0.75, 0, -1.55, 0, -4.37114e-08, -5, 4, 0)
+flip_h = true
+pixel_size = 0.1
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("2_lxau8")
+
+[node name="RoofSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1.55, 0, 0, 0, 0.6, -0.866025, 0, 1.03923, 0.5, 0, 8, -3)
+flip_h = true
+modulate = Color(1, 0.266667, 0.286275, 1)
+pixel_size = 0.1
+texture_filter = 0
+render_priority = 3
+texture = ExtResource("2_lxau8")
+
+[node name="RoofSprite2" type="Sprite3D" parent="."]
+transform = Transform3D(-1.55, -1.56919e-07, -7.54979e-08, 0, 0.6, -0.866025, 2.34043e-07, -1.03923, -0.5, 0, 8, 3)
+flip_h = true
+modulate = Color(1, 0.266667, 0.286275, 1)
+pixel_size = 0.1
+texture_filter = 0
+render_priority = 3
+texture = ExtResource("2_lxau8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_byxke")
