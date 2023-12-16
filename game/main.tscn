@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://baicyl1hwfvww" path="res://ground_square.tscn" id="4_wc7t6"]
 [ext_resource type="Texture2D" uid="uid://dk86fa2hvpf7p" path="res://mom.png" id="5_52m4f"]
 [ext_resource type="Texture2D" uid="uid://gkbwnon2ps1t" path="res://fence.png" id="7_o20kf"]
-[ext_resource type="PackedScene" path="res://end_game_screen.tscn" id="9_88vsx"]
+[ext_resource type="PackedScene" uid="uid://ya537dogkk20" path="res://end_game_screen.tscn" id="9_88vsx"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_46qb7"]
 radius = 1.0
