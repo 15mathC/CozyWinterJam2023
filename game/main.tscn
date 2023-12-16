@@ -44,6 +44,14 @@ shape = SubResource("SphereShape3D_46qb7")
 [node name="Camera3D" type="Camera3D" parent="GameWorld/PlayerSnowball"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 3, 5.02013)
 
+[node name="TimeLabel" type="Label3D" parent="GameWorld/PlayerSnowball/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.605, 2.465, -3.544)
+render_priority = 3
+outline_render_priority = 2
+text = "Time: "
+font_size = 64
+horizontal_alignment = 0
+
 [node name="CPUParticles3D" type="CPUParticles3D" parent="GameWorld/PlayerSnowball"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 amount = 100
