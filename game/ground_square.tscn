@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://baicyl1hwfvww"]
+
+[ext_resource type="Script" path="res://GroundSquare.gd" id="1_vojx7"]
+[ext_resource type="Texture2D" uid="uid://d0o7t1mq37q1k" path="res://snow.png" id="2_ubxi1"]
+[ext_resource type="Texture2D" uid="uid://cplwkrevnllbx" path="res://ground.png" id="3_rgcoj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aa33x"]
+size = Vector3(1, 0.001, 1)
+
+[node name="GroundSquare" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+script = ExtResource("1_vojx7")
+snowTexture = ExtResource("2_ubxi1")
+groundTexture = ExtResource("3_rgcoj")
+growthAmount = 0.01
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_aa33x")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.6, 0, 0, 0, -6.99382e-08, -1, 0, 1.6, -4.37114e-08, 0, 0, 0)
+texture = ExtResource("2_ubxi1")
