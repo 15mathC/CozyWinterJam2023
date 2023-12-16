@@ -19,7 +19,7 @@ func _ready():
 	
 	
 func grow(amount: float):
-	size += amount
+	size += amount * .33
 	# print(size)
 	scale += Vector3(amount, amount, amount)
 	position.y = size + _initial_pos.y
