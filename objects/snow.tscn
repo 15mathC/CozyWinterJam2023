@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bifmx2ckrtbc8"]
+
+[ext_resource type="Texture2D" uid="uid://22v2pfqyg12h" path="res://tiles/snowball.png" id="1_bfug1"]
+[ext_resource type="Script" path="res://objects/snow.gd" id="2_ebtch"]
+[ext_resource type="Script" path="res://objects/CollectionZone.gd" id="3_aj5uq"]
+[ext_resource type="Script" path="res://objects/MagnetZone.gd" id="3_mkmry"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hh0nf"]
+radius = 29.0172
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nqoyo"]
+radius = 5.09902
+
+[node name="SimpleSnowflake" type="Sprite2D"]
+light_mask = 5
+visibility_layer = 5
+texture = ExtResource("1_bfug1")
+script = ExtResource("2_ebtch")
+
+[node name="MagnetZone" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("3_mkmry")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MagnetZone"]
+shape = SubResource("CircleShape2D_hh0nf")
+
+[node name="CollectionZone" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("3_aj5uq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionZone"]
+light_mask = 5
+visibility_layer = 5
+shape = SubResource("CircleShape2D_nqoyo")
+debug_color = Color(0.835294, 0.368627, 0.32549, 0.419608)
+
+[connection signal="area_entered" from="MagnetZone" to="." method="_on_magnet_zone_area_entered"]
+[connection signal="body_entered" from="MagnetZone" to="." method="_on_magnet_zone_body_entered"]
+[connection signal="area_entered" from="CollectionZone" to="." method="_on_collection_zone_area_entered"]
+[connection signal="body_entered" from="CollectionZone" to="." method="_on_collection_zone_body_entered"]

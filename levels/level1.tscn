@@ -1,0 +1,134 @@
+[gd_scene load_steps=16 format=3 uid="uid://cj8cle6l6kq4n"]
+
+[ext_resource type="Script" path="res://levels/level1.gd" id="1_r8on7"]
+[ext_resource type="Texture2D" uid="uid://c8fwrwn0bd43k" path="res://tiles/winterGround.png" id="1_s6mga"]
+[ext_resource type="Texture2D" uid="uid://bdudk8phkyt3a" path="res://tiles/dirt.png" id="2_07qet"]
+[ext_resource type="Script" path="res://levels/CharacterBody2D.gd" id="2_30ubh"]
+[ext_resource type="Texture2D" uid="uid://22v2pfqyg12h" path="res://tiles/snowball.png" id="2_iep0i"]
+[ext_resource type="Script" path="res://levels/Sprite2D.gd" id="3_e2mn5"]
+[ext_resource type="Texture2D" uid="uid://kd6meu5jbov0" path="res://icon.svg" id="6_rjp7r"]
+[ext_resource type="Script" path="res://levels/ProgressBar.gd" id="8_n0yjl"]
+[ext_resource type="PackedScene" uid="uid://bifmx2ckrtbc8" path="res://objects/snow.tscn" id="9_aumpr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m3tr2"]
+texture = ExtResource("1_s6mga")
+texture_region_size = Vector2i(48, 48)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41tu3"]
+texture = ExtResource("2_07qet")
+texture_region_size = Vector2i(48, 48)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, -24, -24, 24, -24, 24, 24, -24, 24, -24, 24)
+
+[sub_resource type="TileSet" id="TileSet_si8tc"]
+tile_size = Vector2i(48, 48)
+physics_layer_0/collision_layer = 5
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_m3tr2")
+sources/1 = SubResource("TileSetAtlasSource_41tu3")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8exg0"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rr5em"]
+radius = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fjag"]
+size = Vector2(118, 119)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_r8on7")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_si8tc")
+rendering_quadrant_size = 20
+format = 2
+layer_0/name = "Ground types"
+layer_0/tile_data = PackedInt32Array(-262149, 0, 0, -262148, 0, 0, -262147, 0, 0, -262146, 0, 0, -262145, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -262139, 0, 0, -196603, 0, 0, -131067, 0, 0, -65531, 0, 0, 5, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 262148, 0, 0, 262147, 0, 0, 262146, 0, 0, 262145, 0, 0, 262144, 0, 0, 327679, 0, 0, 327678, 0, 0, 327677, 0, 0, 327676, 0, 0, 327675, 0, 0, 262139, 0, 0, 196603, 0, 0, 131067, 0, 0, 65531, 0, 0, -5, 0, 0, -65541, 0, 0, -131077, 0, 0, -196613, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -196604, 0, 0, -196605, 0, 0, -196606, 0, 0, -196607, 0, 0, -196608, 0, 0, -131073, 0, 0, -131074, 0, 0, -131075, 0, 0, -131076, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -65535, 0, 0, -65534, 1, 0, -65533, 0, 0, -65532, 0, 0, -131068, 0, 0, -131069, 0, 0, -131070, 1, 0, -131071, 1, 0, -1, 0, 0, -2, 0, 0, -3, 0, 0, -4, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 65537, 0, 0, 65538, 0, 0, 4, 0, 0, 3, 0, 0, 2, 0, 0, 1, 0, 0, -65536, 0, 0, 65536, 0, 0, 196607, 0, 0, 262142, 0, 0, 262141, 0, 0, 262140, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 131071, 0, 0, 131070, 0, 0, 131069, 0, 0, 131068, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 131076, 0, 0, 131075, 0, 0, 131074, 0, 0, 131073, 0, 0, 131072, 0, 0, 65540, 0, 0, 65539, 0, 0, -327674, 1, 0, -262138, 1, 0, -196602, 1, 0, -131066, 1, 0, -65530, 1, 0, 6, 1, 0, 65542, 1, 0, 131078, 1, 0, 196614, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 196617, 1, 0, 131081, 1, 0, 65545, 1, 0, 9, 1, 0, -65527, 1, 0, -131063, 1, 0, -196599, 1, 0, -262135, 1, 0, -327671, 1, 0, -327672, 1, 0, -327673, 1, 0, -262137, 1, 0, -262136, 1, 0, -196600, 1, 0, -196601, 1, 0, -131065, 1, 0, -131064, 1, 0, -65528, 1, 0, -65529, 1, 0, 7, 1, 0, 8, 1, 0, 65544, 1, 0, 65543, 1, 0, 131079, 1, 0, 131080, 1, 0, 196616, 1, 0, 196615, 1, 0)
+
+[node name="SimpleSnowflake" parent="." instance=ExtResource("9_aumpr")]
+position = Vector2(335, -34)
+
+[node name="PlayerSnowball" type="CharacterBody2D" parent="."]
+position = Vector2(4, -5)
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("2_30ubh")
+
+[node name="Camera2D" type="Camera2D" parent="PlayerSnowball"]
+zoom = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerSnowball"]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("2_iep0i")
+script = ExtResource("3_e2mn5")
+
+[node name="Area2D" type="Area2D" parent="PlayerSnowball"]
+light_mask = 5
+visibility_layer = 5
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSnowball/Area2D"]
+light_mask = 5
+visibility_layer = 5
+shape = SubResource("CircleShape2D_8exg0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSnowball"]
+light_mask = 5
+visibility_layer = 5
+shape = SubResource("CircleShape2D_rr5em")
+disabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+light_mask = 5
+visibility_layer = 5
+position = Vector2(-78, -54)
+texture = ExtResource("6_rjp7r")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D2"]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/Area2D"]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_0fjag")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+modulate = Color(0.0862745, 0.988235, 0, 1)
+custom_minimum_size = Vector2(35, 258)
+offset_left = 5.0
+offset_top = 33.0
+offset_right = 45.0
+offset_bottom = 291.0
+fill_mode = 3
+script = ExtResource("8_n0yjl")
+
+[node name="SimpleSnowflake3" parent="." instance=ExtResource("9_aumpr")]
+position = Vector2(384, -145)
+
+[node name="SimpleSnowflake2" parent="." instance=ExtResource("9_aumpr")]
+position = Vector2(442, -63)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(397, 93)
+texture = ExtResource("2_iep0i")
+
+[node name="SimpleSnowflake4" parent="." instance=ExtResource("9_aumpr")]
+position = Vector2(422, 28)
+
+[connection signal="healthChange" from="PlayerSnowball" to="CanvasLayer/ProgressBar" method="_on_player_snowball_health_change"]
+[connection signal="area_entered" from="PlayerSnowball/Area2D" to="PlayerSnowball" method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="PlayerSnowball/Area2D" to="PlayerSnowball" method="_on_area_2d_body_entered"]

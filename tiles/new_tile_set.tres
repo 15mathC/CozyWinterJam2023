@@ -1,0 +1,12 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bckknnumf7c2x"]
+
+[ext_resource type="Texture2D" uid="uid://c8fwrwn0bd43k" path="res://tiles/winterGround.png" id="1_kmjg0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oiyql"]
+texture = ExtResource("1_kmjg0")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(48, 48)
+sources/1 = SubResource("TileSetAtlasSource_oiyql")
