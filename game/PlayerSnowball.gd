@@ -27,16 +27,16 @@ func reset_position():
 func _physics_process(delta):
 	_old_pos = position
 	var motion = Vector3(0, 0, 0)
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("move right"):
 		playerVisual.rotate_z(-speed * delta)
 		motion.x = speed
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("move left"):
 		playerVisual.rotate_z(speed * delta)
 		motion.x = -speed
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("move up"):
 		playerVisual.rotate_x(-speed * delta)
 		motion.z = -speed
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("move down"):
 		playerVisual.rotate_x(speed * delta)
 		motion.z = speed
 	translate(motion * delta)
