@@ -9,11 +9,18 @@ var _pickup_size: float = 0.0
 var _player: Node3D
 
 var is_picked_up = false
+var sound = AudioStreamPlayer.new();
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+	
+	
+func play_sound():
+	add_child(sound)
+	sound.stream = load("res://sounds/swallow1.mp3")
+	sound.play()
 
 
 func player_collision(player):
@@ -28,6 +35,7 @@ func player_collision(player):
 		_player = player
 		_pickup_size = player.size
 		growth_amount = 0
+		play_sound()
 		
 func _process(delta):
 	if is_picked_up:
