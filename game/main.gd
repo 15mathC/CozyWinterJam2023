@@ -1,6 +1,7 @@
 extends Node3D
 
-@export var time_seconds: float = 60;
+@export var time_seconds: float = 10;
+var is_game_over: bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -9,14 +10,20 @@ func _ready():
 	
 
 func get_score():
-	return int($PlayerSnowball.size * 1000)
+	return int($GameWorld/PlayerSnowball.size * 1000)
 
+func end_game():
+	print("GAME OVER")
+	var score = get_score()
+	print("SCORE: ", score)
+	remove_child($GameWorld)
+	$EndGameScreen.visible = true
+	$EndGameScreen.set_score(score)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time_seconds -= delta
 	print(time_seconds)
-	if time_seconds <= 0:
-		print("GAME OVER")
-		print("SCORE: ", get_score())
-		get_tree().quit()
+	if time_seconds <= 0 and not is_game_over:
+		is_game_over = true
+		end_game()
