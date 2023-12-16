@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7dom5kdxbaul"]
+
+[ext_resource type="Script" path="res://Obstacle.gd" id="1_fq5oe"]
+[ext_resource type="Texture2D" uid="uid://cvxpatt88p07g" path="res://snowman.png" id="2_k20am"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k0e7n"]
+size = Vector3(3, 1.61312, 0.001)
+
+[node name="Snowman" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.2, -3)
+script = ExtResource("1_fq5oe")
+size = 0.1
+growth_amount = 0.01
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 2.8, 0)
+flip_h = true
+pixel_size = 0.1
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("2_k20am")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_k0e7n")
