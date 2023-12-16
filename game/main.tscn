@@ -166,9 +166,6 @@ transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -2.99998
 [node name="treeCluster4" type="Node3D" parent="GameWorld"]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 14, -1.7, 2.4)
 
-[node name="House2" parent="GameWorld" instance=ExtResource("6_637or")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.9, -1.8, 15)
-
 [node name="Tree" parent="GameWorld" instance=ExtResource("9_snl6l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.37424, -1.7, -3.38483)
 
