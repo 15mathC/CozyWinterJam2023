@@ -1,7 +1,7 @@
 extends StaticBody3D
 
 @export var size: float = 1.0
-@export var growth_amount: float = 0.1
+@export var growth_amount: float = 0.
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,4 +14,4 @@ func player_collision(player):
 		player.reset_position()
 	else:
 		player.grow(growth_amount)
-		self.queue_free()
+		self.reparent(player)
