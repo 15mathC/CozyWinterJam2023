@@ -57,7 +57,7 @@ func _physics_process(delta):
 	var item = grid.get_cell_item(Vector3(gridPos.x, .5, gridPos.z))
 	print(item)
 	if(item == 0):
-		self.grow(0.01)
+		self.grow(0.005)
 		grid.set_cell_item(Vector3(gridPos.x, .5, gridPos.z), 1)
 		
 	if(item > 1):
