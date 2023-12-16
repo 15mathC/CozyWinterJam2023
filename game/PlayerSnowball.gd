@@ -48,4 +48,21 @@ func _physics_process(delta):
 	var collision = move_and_collide(Vector3(0, 0, 0), true, 0.001, false, 25)
 	if collision:
 		for i in range(collision.get_collision_count()):
-			collision.get_collider(i).player_collision(self)
+			var coll = collision.get_collider(i)
+			print("collided with")
+			print(coll)
+			if coll is GridMap:
+				var grid = coll
+				var pos =  collision.get_position(i)
+
+				#pos = self.to_local(pos)
+
+				var gridPos = grid.local_to_map  ( pos )
+				print(gridPos)
+				var item = grid.get_cell_item( Vector3(gridPos.x, .001, gridPos.z))
+				print(item)
+				if(item == 0):
+					self.grow(0.1)
+					grid.set_cell_item(Vector3(gridPos.x, .001, gridPos.z), 1)
+			else:
+				coll.player_collision(self)
