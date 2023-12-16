@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b6r2fby64qxsp"]
+[gd_scene load_steps=18 format=3 uid="uid://b6r2fby64qxsp"]
 
 [ext_resource type="Script" path="res://PlayerSnowball.gd" id="1_bh06k"]
 [ext_resource type="Script" path="res://main.gd" id="1_n4nh7"]
@@ -8,8 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://baicyl1hwfvww" path="res://ground_square.tscn" id="4_wc7t6"]
 [ext_resource type="Texture2D" uid="uid://dk86fa2hvpf7p" path="res://mom.png" id="5_52m4f"]
 [ext_resource type="Texture2D" uid="uid://gkbwnon2ps1t" path="res://fence.png" id="7_o20kf"]
-[ext_resource type="PackedScene" path="res://pickup.tscn" id="9_1o76i"]
-[ext_resource type="PackedScene" uid="uid://ya537dogkk20" path="res://end_game_screen.tscn" id="9_88vsx"]
+[ext_resource type="PackedScene" uid="uid://ya537dogkk20" path="res://end_game_screen.tscn" id="10_01gf3"]
 [ext_resource type="MeshLibrary" uid="uid://bsymydnpdyudy" path="res://SnoballMeshLib.tres" id="11_45vcm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_46qb7"]
@@ -33,6 +32,7 @@ size = Vector3(1, 3, 1)
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_n4nh7")
+time_seconds = 10.0
 
 [node name="GameWorld" type="Node3D" parent="."]
 
@@ -2885,12 +2885,7 @@ texture = ExtResource("7_o20kf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld/Fences/Obstacle13"]
 shape = SubResource("BoxShape3D_byxke")
 
-[node name="EndGameScreen" parent="." instance=ExtResource("9_88vsx")]
-visible = false
-
-[node name="SpeedPickup" parent="." instance=ExtResource("10_sa537")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7, 0, -5.6)
-[node name="GridMap" type="GridMap" parent="."]
+[node name="GridMap" type="GridMap" parent="GameWorld"]
 mesh_library = ExtResource("11_45vcm")
 cell_size = Vector3(1, 1, 1)
 cell_center_y = false
@@ -2898,3 +2893,6 @@ data = {
 "cells": PackedInt32Array(65532, 6, 0, 65533, 6, 0, 65534, 6, 0, 65535, 6, 0, 0, 6, 0, 1, 6, 0, 2, 6, 0)
 }
 metadata/_editor_floor_ = Vector3(0, 2, 0)
+
+[node name="EndGameScreen" parent="." instance=ExtResource("10_01gf3")]
+visible = false
