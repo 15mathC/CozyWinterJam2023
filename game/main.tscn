@@ -553,6 +553,30 @@ transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -2.99998
 [node name="Tree3" parent="GameWorld/allTrees/treeCluster4" instance=ExtResource("9_snl6l")]
 transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -5.99998, 1.8, -6.4373e-06)
 
+[node name="treeCluster8" type="Node3D" parent="GameWorld/allTrees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2659, -3.4, -18.5599)
+
+[node name="Tree" parent="GameWorld/allTrees/treeCluster8" instance=ExtResource("9_snl6l")]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 1.8, 0)
+
+[node name="Tree2" parent="GameWorld/allTrees/treeCluster8" instance=ExtResource("9_snl6l")]
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -2.99998, 1.8, -2)
+
+[node name="Tree3" parent="GameWorld/allTrees/treeCluster8" instance=ExtResource("9_snl6l")]
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -5.99998, 1.8, -6.4373e-06)
+
+[node name="treeCluster9" type="Node3D" parent="GameWorld/allTrees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5872, -3.4, -17.5599)
+
+[node name="Tree" parent="GameWorld/allTrees/treeCluster9" instance=ExtResource("9_snl6l")]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 1.8, 0)
+
+[node name="Tree2" parent="GameWorld/allTrees/treeCluster9" instance=ExtResource("9_snl6l")]
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -2.99998, 1.8, -2)
+
+[node name="Tree3" parent="GameWorld/allTrees/treeCluster9" instance=ExtResource("9_snl6l")]
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -5.99998, 1.8, -6.4373e-06)
+
 [node name="treeCluster5" type="Node3D" parent="GameWorld/allTrees"]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -9.29712, -3.4, -11.7566)
 
@@ -563,6 +587,18 @@ transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 1.8, 0)
 transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -2.99998, 1.8, -2)
 
 [node name="Tree3" parent="GameWorld/allTrees/treeCluster5" instance=ExtResource("9_snl6l")]
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -5.99998, 1.8, -6.4373e-06)
+
+[node name="treeCluster7" type="Node3D" parent="GameWorld/allTrees"]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2.29712, -3.4, -5.7566)
+
+[node name="Tree" parent="GameWorld/allTrees/treeCluster7" instance=ExtResource("9_snl6l")]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 1.8, 0)
+
+[node name="Tree2" parent="GameWorld/allTrees/treeCluster7" instance=ExtResource("9_snl6l")]
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -2.99998, 1.8, -2)
+
+[node name="Tree3" parent="GameWorld/allTrees/treeCluster7" instance=ExtResource("9_snl6l")]
 transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -5.99998, 1.8, -6.4373e-06)
 
 [node name="treeCluster6" type="Node3D" parent="GameWorld/allTrees"]
