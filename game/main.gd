@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var time_seconds: float = 10;
+@export var time_seconds: float = 1000;
 var is_game_over: bool = false
 
 
