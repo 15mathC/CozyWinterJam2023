@@ -22,9 +22,8 @@ func end_game():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	time_seconds -= delta
+	print(time_seconds)
 	if time_seconds <= 0 and not is_game_over:
 		is_game_over = true
 		end_game()
-	elif not is_game_over:
-		time_seconds -= delta
-		$GameWorld/PlayerSnowball/Camera3D/TimeLabel.text = "Time: %.01f" % time_seconds
