@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://baicyl1hwfvww" path="res://ground_square.tscn" id="4_wc7t6"]
 [ext_resource type="Texture2D" uid="uid://dk86fa2hvpf7p" path="res://mom.png" id="5_52m4f"]
 [ext_resource type="Texture2D" uid="uid://gkbwnon2ps1t" path="res://fence.png" id="7_o20kf"]
-[ext_resource type="PackedScene" uid="uid://cat1xw6un1jm5" path="res://pickup.tscn" id="9_1o76i"]
 [ext_resource type="PackedScene" uid="uid://ya537dogkk20" path="res://end_game_screen.tscn" id="9_88vsx"]
+[ext_resource type="PackedScene" uid="uid://dm8lt1dfmgwl4" path="res://speed_pickup.tscn" id="10_sa537"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_46qb7"]
 radius = 1.0
@@ -2885,7 +2885,8 @@ texture = ExtResource("7_o20kf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld/Fences/Obstacle13"]
 shape = SubResource("BoxShape3D_byxke")
 
-[node name="Pickup" parent="GameWorld" instance=ExtResource("9_1o76i")]
-
 [node name="EndGameScreen" parent="." instance=ExtResource("9_88vsx")]
 visible = false
+
+[node name="SpeedPickup" parent="." instance=ExtResource("10_sa537")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7, 0, -5.6)
