@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b6r2fby64qxsp"]
+[gd_scene load_steps=18 format=3 uid="uid://b6r2fby64qxsp"]
 
 [ext_resource type="Script" path="res://PlayerSnowball.gd" id="1_bh06k"]
 [ext_resource type="Script" path="res://main.gd" id="1_n4nh7"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dk86fa2hvpf7p" path="res://mom.png" id="5_52m4f"]
 [ext_resource type="Texture2D" uid="uid://gkbwnon2ps1t" path="res://fence.png" id="7_o20kf"]
 [ext_resource type="PackedScene" uid="uid://ya537dogkk20" path="res://end_game_screen.tscn" id="9_88vsx"]
+[ext_resource type="Script" path="res://Pickup.gd" id="9_iup24"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_46qb7"]
 radius = 1.0
@@ -2872,6 +2873,19 @@ render_priority = 1
 texture = ExtResource("7_o20kf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld/Fences/Obstacle13"]
+shape = SubResource("BoxShape3D_byxke")
+
+[node name="Pickup" type="StaticBody3D" parent="GameWorld"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
+script = ExtResource("9_iup24")
+
+[node name="Sprite3D" type="Sprite3D" parent="GameWorld/Pickup"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+flip_h = true
+render_priority = 1
+texture = ExtResource("7_o20kf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld/Pickup"]
 shape = SubResource("BoxShape3D_byxke")
 
 [node name="EndGameScreen" parent="." instance=ExtResource("9_88vsx")]
