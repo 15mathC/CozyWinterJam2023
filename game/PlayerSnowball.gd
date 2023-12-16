@@ -62,7 +62,7 @@ func _physics_process(delta):
 				var item = grid.get_cell_item( Vector3(gridPos.x, .001, gridPos.z))
 				print(item)
 				if(item == 0):
-					self.grow(0.1)
+					self.grow(0.01)
 					grid.set_cell_item(Vector3(gridPos.x, .001, gridPos.z), 1)
 			else:
 				coll.player_collision(self)

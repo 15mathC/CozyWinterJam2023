@@ -15,3 +15,4 @@ func player_collision(player):
 	else:
 		player.grow(growth_amount)
 		self.reparent(player)
+		growth_amount = 0

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://gkbwnon2ps1t" path="res://fence.png" id="7_o20kf"]
 [ext_resource type="PackedScene" path="res://pickup.tscn" id="9_1o76i"]
 [ext_resource type="PackedScene" uid="uid://ya537dogkk20" path="res://end_game_screen.tscn" id="9_88vsx"]
-[ext_resource type="MeshLibrary" uid="uid://uogqngjld06u" path="res://SnoballMeshLib.tres" id="11_45vcm"]
+[ext_resource type="MeshLibrary" uid="uid://bsymydnpdyudy" path="res://SnoballMeshLib.tres" id="11_45vcm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_46qb7"]
 radius = 1.0
