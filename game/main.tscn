@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://baicyl1hwfvww" path="res://ground_square.tscn" id="4_wc7t6"]
 [ext_resource type="Texture2D" uid="uid://dk86fa2hvpf7p" path="res://mom.png" id="5_52m4f"]
 [ext_resource type="Texture2D" uid="uid://gkbwnon2ps1t" path="res://fence.png" id="7_o20kf"]
+[ext_resource type="PackedScene" uid="uid://cat1xw6un1jm5" path="res://pickup.tscn" id="9_1o76i"]
 [ext_resource type="PackedScene" uid="uid://ya537dogkk20" path="res://end_game_screen.tscn" id="9_88vsx"]
-[ext_resource type="Script" path="res://Pickup.gd" id="9_iup24"]
 [ext_resource type="MeshLibrary" uid="uid://uogqngjld06u" path="res://SnoballMeshLib.tres" id="11_45vcm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_46qb7"]
@@ -112,6 +112,7 @@ shape = SubResource("BoxShape3D_mt07d")
 [node name="Obstacle2" type="StaticBody3D" parent="GameWorld"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -1)
 script = ExtResource("3_chjlc")
+growth_amount = 0.2
 
 [node name="Sprite3D" type="Sprite3D" parent="GameWorld/Obstacle2"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -2754,6 +2755,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
 script = ExtResource("3_chjlc")
 size = 0.1
+growth_amount = 0.05
 
 [node name="Sprite3D" type="Sprite3D" parent="GameWorld/Fences/Obstacle5"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -2768,6 +2770,7 @@ shape = SubResource("BoxShape3D_byxke")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -3)
 script = ExtResource("3_chjlc")
 size = 0.1
+growth_amount = 0.05
 
 [node name="Sprite3D" type="Sprite3D" parent="GameWorld/Fences/Obstacle6"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -2782,6 +2785,7 @@ shape = SubResource("BoxShape3D_byxke")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -3)
 script = ExtResource("3_chjlc")
 size = 0.1
+growth_amount = 0.05
 
 [node name="Sprite3D" type="Sprite3D" parent="GameWorld/Fences/Obstacle7"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -2796,6 +2800,7 @@ shape = SubResource("BoxShape3D_byxke")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -3)
 script = ExtResource("3_chjlc")
 size = 0.1
+growth_amount = 0.05
 
 [node name="Sprite3D" type="Sprite3D" parent="GameWorld/Fences/Obstacle8"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -2810,6 +2815,7 @@ shape = SubResource("BoxShape3D_byxke")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.1, 0, -2.2)
 script = ExtResource("3_chjlc")
 size = 0.1
+growth_amount = 0.05
 
 [node name="Sprite3D" type="Sprite3D" parent="GameWorld/Fences/Obstacle9"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -2824,6 +2830,7 @@ shape = SubResource("BoxShape3D_byxke")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.1, 0, -0.7)
 script = ExtResource("3_chjlc")
 size = 0.1
+growth_amount = 0.05
 
 [node name="Sprite3D" type="Sprite3D" parent="GameWorld/Fences/Obstacle10"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -2838,6 +2845,7 @@ shape = SubResource("BoxShape3D_byxke")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.1, 0, 0.8)
 script = ExtResource("3_chjlc")
 size = 0.1
+growth_amount = 0.05
 
 [node name="Sprite3D" type="Sprite3D" parent="GameWorld/Fences/Obstacle11"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -2852,6 +2860,7 @@ shape = SubResource("BoxShape3D_byxke")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.1, 0, 2.3)
 script = ExtResource("3_chjlc")
 size = 0.1
+growth_amount = 0.05
 
 [node name="Sprite3D" type="Sprite3D" parent="GameWorld/Fences/Obstacle12"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -2866,6 +2875,7 @@ shape = SubResource("BoxShape3D_byxke")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.1, 0, 3.8)
 script = ExtResource("3_chjlc")
 size = 0.1
+growth_amount = 0.05
 
 [node name="Sprite3D" type="Sprite3D" parent="GameWorld/Fences/Obstacle13"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -2876,18 +2886,7 @@ texture = ExtResource("7_o20kf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld/Fences/Obstacle13"]
 shape = SubResource("BoxShape3D_byxke")
 
-[node name="Pickup" type="StaticBody3D" parent="GameWorld"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
-script = ExtResource("9_iup24")
-
-[node name="Sprite3D" type="Sprite3D" parent="GameWorld/Pickup"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-flip_h = true
-render_priority = 1
-texture = ExtResource("7_o20kf")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld/Pickup"]
-shape = SubResource("BoxShape3D_byxke")
+[node name="Pickup" parent="GameWorld" instance=ExtResource("9_1o76i")]
 
 [node name="EndGameScreen" parent="." instance=ExtResource("9_88vsx")]
 visible = false
