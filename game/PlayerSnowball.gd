@@ -4,17 +4,19 @@ extends AnimatableBody3D
 @export var speed: int = 10
 var size = 0
 var _old_pos = Vector3(0,0,0)
+var _initial_pos = Vector3(0,0,0)
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	playerVisual = $Snowball as Node3D
+	_initial_pos = position
 	
 	
 func grow(amount: float):
 	size += amount
 	scale += Vector3(amount, amount, amount)
-	position.y = size
+	position.y = size + _initial_pos.y
 	
 func reset_position():
 	position.x = _old_pos.x
@@ -38,7 +40,7 @@ func _physics_process(delta):
 		playerVisual.rotate_x(speed * delta)
 		motion.z = speed
 	translate(motion * delta)
-	var collision = move_and_collide(motion * delta, true, 0.001, false, 25)
+	var collision = move_and_collide(Vector3(0, 0, 0), true, 0.001, false, 25)
 	if collision:
 		for i in range(collision.get_collision_count()):
 			collision.get_collider(i).player_collision(self)
