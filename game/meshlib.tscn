@@ -1,8 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxd4t87n5huc"]
+[gd_scene load_steps=35 format=3 uid="uid://dxd4t87n5huc"]
 
 [ext_resource type="Texture2D" uid="uid://cplwkrevnllbx" path="res://ground.png" id="1_soj1v"]
 [ext_resource type="Texture2D" uid="uid://d0o7t1mq37q1k" path="res://snow.png" id="1_t4el7"]
 [ext_resource type="Script" path="res://StaticBody3D.gd" id="2_vb4ae"]
+[ext_resource type="Texture2D" uid="uid://cb0ugcij60euk" path="res://ice_top_left.png" id="4_7yye2"]
+[ext_resource type="Texture2D" uid="uid://dlbcxk6kfjoqq" path="res://ice_bottom_right.png" id="4_73l2x"]
+[ext_resource type="Texture2D" uid="uid://cbogcykrm724m" path="res://ice.png" id="4_jfdv2"]
+[ext_resource type="Texture2D" uid="uid://bcetkc0umdgt1" path="res://ice_bottom.png" id="5_1n1wb"]
+[ext_resource type="Texture2D" uid="uid://cs8iusddmqqe" path="res://ice_top_right.png" id="9_3n3sg"]
+[ext_resource type="Texture2D" uid="uid://dgrimmhivds7l" path="res://ice_bottom_left.png" id="10_elyc2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pkjo"]
 albedo_texture = ExtResource("1_t4el7")
@@ -26,6 +32,71 @@ albedo_texture = ExtResource("1_soj1v")
 material = SubResource("StandardMaterial3D_q684t")
 size = Vector3(1, 0.001, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ls6yh"]
+albedo_texture = ExtResource("4_jfdv2")
+
+[sub_resource type="BoxMesh" id="BoxMesh_f44c3"]
+material = SubResource("StandardMaterial3D_ls6yh")
+size = Vector3(1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxmrm"]
+albedo_texture = ExtResource("5_1n1wb")
+
+[sub_resource type="BoxMesh" id="BoxMesh_8pbks"]
+size = Vector3(1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyjie"]
+albedo_texture = ExtResource("5_1n1wb")
+
+[sub_resource type="BoxMesh" id="BoxMesh_oi06q"]
+material = SubResource("StandardMaterial3D_dyjie")
+size = Vector3(1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v8gbu"]
+albedo_texture = ExtResource("5_1n1wb")
+
+[sub_resource type="BoxMesh" id="BoxMesh_tl67y"]
+material = SubResource("StandardMaterial3D_v8gbu")
+size = Vector3(1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i480u"]
+albedo_texture = ExtResource("5_1n1wb")
+
+[sub_resource type="BoxMesh" id="BoxMesh_46a54"]
+material = SubResource("StandardMaterial3D_i480u")
+size = Vector3(1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8nef"]
+albedo_texture = ExtResource("4_7yye2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nq23w"]
+albedo_texture = ExtResource("4_7yye2")
+
+[sub_resource type="BoxMesh" id="BoxMesh_3biiq"]
+material = SubResource("StandardMaterial3D_nq23w")
+size = Vector3(1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8620"]
+albedo_texture = ExtResource("9_3n3sg")
+
+[sub_resource type="BoxMesh" id="BoxMesh_h3360"]
+material = SubResource("StandardMaterial3D_p8620")
+size = Vector3(1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8th6y"]
+albedo_texture = ExtResource("10_elyc2")
+
+[sub_resource type="BoxMesh" id="BoxMesh_igkgh"]
+material = SubResource("StandardMaterial3D_8th6y")
+size = Vector3(1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxdih"]
+albedo_texture = ExtResource("4_73l2x")
+
+[sub_resource type="BoxMesh" id="BoxMesh_x5t8j"]
+material = SubResource("StandardMaterial3D_xxdih")
+size = Vector3(1, 0, 1)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -42,3 +113,53 @@ material_override = SubResource("StandardMaterial3D_ghuog")
 mesh = SubResource("BoxMesh_jjrg4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="ice" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_f44c3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ice"]
+
+[node name="ice2_bottom" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_pxmrm")
+mesh = SubResource("BoxMesh_8pbks")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ice2_bottom"]
+
+[node name="ice2_left" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_oi06q")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ice2_left"]
+
+[node name="ice2_right" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_tl67y")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ice2_right"]
+
+[node name="ice2_top" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+mesh = SubResource("BoxMesh_46a54")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ice2_top"]
+
+[node name="ice2_topleft" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_j8nef")
+mesh = SubResource("BoxMesh_3biiq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ice2_topleft"]
+
+[node name="ice2_topright" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_h3360")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ice2_topright"]
+
+[node name="ice2_bottomleft" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_igkgh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ice2_bottomleft"]
+
+[node name="ice2_bottomright" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_x5t8j")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ice2_bottomright"]
