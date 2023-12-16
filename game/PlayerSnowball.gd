@@ -1,11 +1,15 @@
 extends AnimatableBody3D
 
+class_name PlayerSnowball
+
 @export var playerVisual: Node3D
 @export var speed: float = 10
 @export var dashspeed: float = 50
 var size = 0
 var _old_pos = Vector3(0,0,0)
 var _initial_pos = Vector3(0,0,0)
+
+signal playerGrow
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +22,7 @@ func grow(amount: float):
 	size += amount
 	scale += Vector3(amount, amount, amount)
 	position.y = size + _initial_pos.y
+	playerGrow.emit()
 	
 func reset_position():
 	position.x = _old_pos.x

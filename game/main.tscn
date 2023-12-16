@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b6r2fby64qxsp"]
+[gd_scene load_steps=20 format=3 uid="uid://b6r2fby64qxsp"]
 
 [ext_resource type="Script" path="res://PlayerSnowball.gd" id="1_bh06k"]
 [ext_resource type="Script" path="res://main.gd" id="1_n4nh7"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cat1xw6un1jm5" path="res://pickup.tscn" id="9_1o76i"]
 [ext_resource type="PackedScene" uid="uid://ya537dogkk20" path="res://end_game_screen.tscn" id="9_88vsx"]
 [ext_resource type="MeshLibrary" uid="uid://uogqngjld06u" path="res://SnoballMeshLib.tres" id="11_45vcm"]
+[ext_resource type="Script" path="res://ProgressBar.gd" id="12_gw78r"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_46qb7"]
 radius = 1.0
@@ -2899,3 +2900,15 @@ data = {
 "cells": PackedInt32Array(65532, 6, 0, 65533, 6, 0, 65534, 6, 0, 65535, 6, 0, 0, 6, 0, 1, 6, 0, 2, 6, 0)
 }
 metadata/_editor_floor_ = Vector3(0, 2, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+modulate = Color(0, 1, 0, 1)
+offset_left = 1090.0
+offset_top = 115.0
+offset_right = 1137.0
+offset_bottom = 500.0
+value = 50.0
+fill_mode = 3
+script = ExtResource("12_gw78r")
