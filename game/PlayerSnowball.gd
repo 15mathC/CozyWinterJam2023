@@ -1,7 +1,8 @@
 extends AnimatableBody3D
 
 @export var playerVisual: Node3D
-@export var speed: int = 10
+@export var speed: float = 10
+@export var dashspeed: float = 50
 var size = 0
 var _old_pos = Vector3(0,0,0)
 
@@ -37,6 +38,10 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move down"):
 		playerVisual.rotate_x(speed * delta)
 		motion.z = speed
+	if Input.is_action_pressed("sprint"):
+		speed = dashspeed
+	if Input.is_action_just_released("sprint"):
+		speed = 10
 	translate(motion * delta)
 	var collision = move_and_collide(motion * delta, true, 0.001, false, 25)
 	if collision:
