@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://b6r2fby64qxsp"]
+[gd_scene load_steps=16 format=3 uid="uid://b6r2fby64qxsp"]
 
 [ext_resource type="Script" path="res://PlayerSnowball.gd" id="1_bh06k"]
+[ext_resource type="Script" path="res://main.gd" id="1_n4nh7"]
 [ext_resource type="Texture2D" uid="uid://d0o7t1mq37q1k" path="res://snow.png" id="2_rfh8k"]
 [ext_resource type="Texture2D" uid="uid://dyn8iumrkjbbh" path="res://testTree.png" id="3_2bpv4"]
 [ext_resource type="Script" path="res://Obstacle.gd" id="3_chjlc"]
@@ -28,6 +29,7 @@ size = Vector3(2, 6, 1)
 size = Vector3(1, 3, 1)
 
 [node name="World" type="Node3D"]
+script = ExtResource("1_n4nh7")
 
 [node name="PlayerSnowball" type="AnimatableBody3D" parent="."]
 sync_to_physics = false
