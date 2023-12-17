@@ -30,6 +30,7 @@ func player_collision(player):
 		is_picked_up = true
 		player.grow(growth_amount)
 		self.reparent(player.get_node("Snowball"))
+		remove_child($CollisionShape3D)
 		_initial_scale = scale
 		_initial_pos = position
 		_player = player
