@@ -5,7 +5,7 @@ class_name PlayerSnowball
 @export var playerVisual: Node3D
 @export var speed: float = 10
 @export var dashspeed: float = 50
-@export var snowgrow_amount: float = 0.005
+@export var snowgrow_amount: float = 0.001
 var size = 0
 var _old_pos = Vector3(0,0,0)
 var _initial_pos = Vector3(0,0,0)
@@ -30,6 +30,7 @@ func play_sound():
 	
 func grow(amount: float):
 	size += amount
+	print(size)
 	# print(size)
 	scale += Vector3(amount, amount, amount)
 	position.y = size + _initial_pos.y
