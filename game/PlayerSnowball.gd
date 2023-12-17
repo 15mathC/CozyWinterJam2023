@@ -5,10 +5,12 @@ class_name PlayerSnowball
 @export var playerVisual: Node3D
 @export var speed: float = 10
 @export var dashspeed: float = 50
+@export var snowgrow_amount: float = 0.005
 var size = 0
 var _old_pos = Vector3(0,0,0)
 var _initial_pos = Vector3(0,0,0)
-
+var _old_motion
+var sound = AudioStreamPlayer.new();
 signal playerGrow
 
 
@@ -16,6 +18,13 @@ signal playerGrow
 func _ready():
 	playerVisual = $Snowball as Node3D
 	_initial_pos = position
+	add_child(sound)
+	
+	
+func play_sound():
+	if not sound.playing:
+		sound.stream = load("res://sounds/swallow2.mp3")
+		sound.play()
 	
 	
 func grow(amount: float):
@@ -57,23 +66,22 @@ func _physics_process(delta):
 	var item = grid.get_cell_item(Vector3(gridPos.x, .5, gridPos.z))
 	print(item)
 	if(item == 0):
-		self.grow(0.005)
+		self.grow(snowgrow_amount)
 		grid.set_cell_item(Vector3(gridPos.x, .5, gridPos.z), 1)
-		
-	translate(motion * delta)
-	#pos = self.to_local(pos)
-
-	var grid: GridMap = get_parent().get_parent().get_node("GridMap");
-	var gridPos = grid.local_to_map  (self.position);
-	print(gridPos)
-	var item = grid.get_cell_item(Vector3(gridPos.x, .5, gridPos.z))
-	print(item)
-	if(item == 0):
-		self.grow(0.01)
-		grid.set_cell_item(Vector3(gridPos.x, .5, gridPos.z), 1)
+		# play_sound()
 	
 	var vec = motion * delta
 	var collision = move_and_collide(vec, false, 0.001, true, 1)
+
+
+	if(item > 1):
+		translate(_old_motion * delta)
+	else:
+		translate(motion * delta)
+		_old_motion = motion
+
+	
+
 	if collision:
 		for i in range(collision.get_collision_count()):
 			var coll = collision.get_collider(i)

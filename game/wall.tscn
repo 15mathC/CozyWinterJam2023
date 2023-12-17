@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cp20ofa7rfko3"]
+
+[ext_resource type="Script" path="res://Obstacle.gd" id="1_5xem8"]
+[ext_resource type="Texture2D" uid="uid://d0o7t1mq37q1k" path="res://snow.png" id="2_6vyev"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yvd3u"]
+size = Vector3(32, 32, 0.001)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgrov"]
+albedo_color = Color(0.25098, 0.235294, 0.239216, 1)
+albedo_texture = ExtResource("2_6vyev")
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_74c1h"]
+
+[node name="Wall" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.2, -3)
+script = ExtResource("1_5xem8")
+size = 50.0
+growth_amount = 5.0
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 15, 0)
+flip_h = true
+modulate = Color(0.25098, 0.235294, 0.239216, 1)
+pixel_size = 0.1
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("2_6vyev")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
+shape = SubResource("BoxShape3D_yvd3u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(32, 0, 0, 0, 3, 0, 0, 0, 3, 0, 30, 0)
+material_override = SubResource("StandardMaterial3D_cgrov")
+mesh = SubResource("BoxMesh_74c1h")
