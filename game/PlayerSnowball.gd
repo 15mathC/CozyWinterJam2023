@@ -50,6 +50,16 @@ func _physics_process(delta):
 		speed = dashspeed
 	if Input.is_action_just_released("sprint"):
 		speed = 10
+		
+	var grid: GridMap = get_parent().get_parent().get_node("GridMap");
+	var gridPos = grid.local_to_map(self.position);
+	print(gridPos)
+	var item = grid.get_cell_item(Vector3(gridPos.x, .5, gridPos.z))
+	print(item)
+	if(item == 0):
+		self.grow(0.005)
+		grid.set_cell_item(Vector3(gridPos.x, .5, gridPos.z), 1)
+		
 	translate(motion * delta)
 	#pos = self.to_local(pos)
 
