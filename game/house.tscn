@@ -17,7 +17,6 @@ transform = Transform3D(1.55, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 4, 5)
 flip_h = true
 pixel_size = 0.1
 texture_filter = 0
-render_priority = 1
 texture = ExtResource("2_lxau8")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
@@ -25,7 +24,6 @@ transform = Transform3D(1.55, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 4, -5)
 flip_h = true
 pixel_size = 0.1
 texture_filter = 0
-render_priority = 1
 texture = ExtResource("2_lxau8")
 
 [node name="Sprite3D3" type="Sprite3D" parent="."]
@@ -33,7 +31,6 @@ transform = Transform3D(-6.77527e-08, 0, 1, 0, 0.75, 0, -1.55, 0, -4.37114e-08, 
 flip_h = true
 pixel_size = 0.1
 texture_filter = 0
-render_priority = 1
 texture = ExtResource("2_lxau8")
 
 [node name="Sprite3D4" type="Sprite3D" parent="."]
@@ -41,7 +38,6 @@ transform = Transform3D(-6.77527e-08, 0, 1, 0, 0.75, 0, -1.55, 0, -4.37114e-08, 
 flip_h = true
 pixel_size = 0.1
 texture_filter = 0
-render_priority = 1
 texture = ExtResource("2_lxau8")
 
 [node name="RoofSprite" type="Sprite3D" parent="."]
@@ -50,7 +46,6 @@ flip_h = true
 modulate = Color(1, 0.266667, 0.286275, 1)
 pixel_size = 0.1
 texture_filter = 0
-render_priority = 3
 texture = ExtResource("2_lxau8")
 
 [node name="RoofSprite2" type="Sprite3D" parent="."]
@@ -59,7 +54,6 @@ flip_h = true
 modulate = Color(1, 0.266667, 0.286275, 1)
 pixel_size = 0.1
 texture_filter = 0
-render_priority = 3
 texture = ExtResource("2_lxau8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
