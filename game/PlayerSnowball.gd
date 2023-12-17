@@ -5,6 +5,7 @@ class_name PlayerSnowball
 @export var playerVisual: Node3D
 @export var speed: float = 10
 @export var dashspeed: float = 50
+@export var snowgrow_amount: float = 0.005
 var size = 0
 var _old_pos = Vector3(0,0,0)
 var _initial_pos = Vector3(0,0,0)
@@ -65,7 +66,7 @@ func _physics_process(delta):
 	var item = grid.get_cell_item(Vector3(gridPos.x, .5, gridPos.z))
 	print(item)
 	if(item == 0):
-		self.grow(0.005)
+		self.grow(snowgrow_amount)
 		grid.set_cell_item(Vector3(gridPos.x, .5, gridPos.z), 1)
 		# play_sound()
 		

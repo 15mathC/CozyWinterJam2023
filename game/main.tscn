@@ -49,6 +49,13 @@ text = "Time: "
 font_size = 64
 horizontal_alignment = 0
 
+[node name="StartLabel" type="Label3D" parent="GameWorld/PlayerSnowball/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+render_priority = 3
+outline_render_priority = 2
+text = "Grow!"
+font_size = 64
+
 [node name="CPUParticles3D" type="CPUParticles3D" parent="GameWorld/PlayerSnowball"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 amount = 100
