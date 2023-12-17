@@ -10,7 +10,7 @@ var size = 0
 var _old_pos = Vector3(0,0,0)
 var _initial_pos = Vector3(0,0,0)
 var _old_motion
-var fire_amount = .5
+var fire_amount = .01
 var sound = AudioStreamPlayer.new();
 signal playerGrow
 
@@ -32,6 +32,11 @@ func grow(amount: float):
 	size += amount
 	# print(size)
 	scale += Vector3(amount, amount, amount)
+	if(scale[0] < 0.5 || scale[1] < 0.5 || scale[2] < 0.5):
+		scale -= Vector3(amount, amount, amount)
+
+	if(size < 0):
+		size = 0
 	position.y = size + _initial_pos.y
 	playerGrow.emit()
 	

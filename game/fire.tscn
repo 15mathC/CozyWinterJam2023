@@ -19,6 +19,7 @@ point_count = 2
 [node name="Fire" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_jrev6")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="StaticBody3D"]
