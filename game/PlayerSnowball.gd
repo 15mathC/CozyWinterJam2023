@@ -9,6 +9,7 @@ var size = 0
 var _old_pos = Vector3(0,0,0)
 var _initial_pos = Vector3(0,0,0)
 var _old_motion
+var fire_amount = .5
 signal playerGrow
 
 
@@ -29,6 +30,12 @@ func reset_position():
 	position.x = _old_pos.x
 	position.z = _old_pos.z
 
+func fire():
+	size -= fire_amount * .33
+	# print(size)
+	scale -= Vector3(fire_amount, fire_amount, fire_amount)
+	position.y = size + _initial_pos.y
+	playerGrow.emit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -53,11 +60,11 @@ func _physics_process(delta):
 		
 	var grid: GridMap = get_parent().get_parent().get_node("GridMap");
 	var gridPos = grid.local_to_map(self.position);
-	print(gridPos)
+
 	var item = grid.get_cell_item(Vector3(gridPos.x, .5, gridPos.z))
-	print(item)
+
 	if(item == 0):
-		self.grow(0.005)
+		self.grow(0.01)
 		grid.set_cell_item(Vector3(gridPos.x, .5, gridPos.z), 1)
 		
 	if(item > 1):
@@ -71,4 +78,5 @@ func _physics_process(delta):
 	if collision:
 		for i in range(collision.get_collision_count()):
 			var coll = collision.get_collider(i)
-			coll.player_collision(self)
+			if(coll.has_method("player_collision")):
+				coll.player_collision(self)
