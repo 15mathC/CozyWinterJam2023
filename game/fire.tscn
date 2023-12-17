@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://corq1abp178lv"]
+
+[ext_resource type="Script" path="res://StaticBody3D.gd" id="1_jrev6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x7bs6"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.317647, 0.0666667, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_le2ad"]
+size = Vector2(0.3, 0.3)
+
+[sub_resource type="Curve" id="Curve_ugpaa"]
+_data = [Vector2(0.00302114, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.434446), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_y4xai"]
+
+[node name="Fire" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_jrev6")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="StaticBody3D"]
+material_override = SubResource("StandardMaterial3D_x7bs6")
+amount = 100
+lifetime = 0.5
+draw_order = 2
+mesh = SubResource("QuadMesh_le2ad")
+emission_shape = 1
+emission_sphere_radius = 0.8
+spread = 38.83
+gravity = Vector3(0, 7, 0)
+scale_amount_min = 1.4
+scale_amount_max = 1.4
+scale_amount_curve = SubResource("Curve_ugpaa")
+color = Color(1, 0.329412, 0, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CylinderShape3D_y4xai")
