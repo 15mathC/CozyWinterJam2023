@@ -3,7 +3,7 @@ extends AnimatableBody3D
 class_name PlayerSnowball
 
 @export var playerVisual: Node3D
-@export var speed: float = 5
+@export var speed: float = 10
 @export var dashspeed: float = 50
 @export var snowgrow_amount: float = 0.005
 var size = 0
@@ -29,10 +29,10 @@ func play_sound():
 	
 	
 func grow(amount: float):
-	size += amount * .33
+	size += amount
 	# print(size)
 	scale += Vector3(amount, amount, amount)
-	position.y = .5
+	position.y = size + _initial_pos.y
 	playerGrow.emit()
 	
 func reset_position():
@@ -40,11 +40,7 @@ func reset_position():
 	position.z = _old_pos.z
 
 func fire():
-	size -= fire_amount * .33
-	# print(size)
-	scale -= Vector3(fire_amount, fire_amount, fire_amount)
-	position.y = size + _initial_pos.y
-	playerGrow.emit()
+	grow(-fire_amount * .33)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -69,27 +65,18 @@ func _physics_process(delta):
 		
 	var grid: GridMap = get_parent().get_parent().get_node("GridMap");
 	var gridPos = grid.local_to_map(self.position);
-
 	var item = grid.get_cell_item(Vector3(gridPos.x, .5, gridPos.z))
-
 	if(item == 0):
-		self.grow(0.01)
 		self.grow(snowgrow_amount)
 		grid.set_cell_item(Vector3(gridPos.x, .5, gridPos.z), 1)
 		# play_sound()
-	
-	var vec = motion * delta
-	var collision = move_and_collide(vec, false, 0.001, true, 1)
-
-
 	if(item > 1):
 		translate(_old_motion * delta)
 	else:
 		translate(motion * delta)
 		_old_motion = motion
-
 	
-
+	var collision = move_and_collide(Vector3(0, 0, 0), true, 0.001, true, 10)
 	if collision:
 		for i in range(collision.get_collision_count()):
 			var coll = collision.get_collider(i)
